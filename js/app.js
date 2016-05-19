@@ -10,7 +10,11 @@ var MuppetModel = Backbone.Model.extend({
 
 var MuppetsCollection = Backbone.Collection.extend({
     url: 'http://demo2352365.mockable.io/muppets',
-    model: MuppetModel
+    model: MuppetModel,
+
+    parse: function(data) {
+        return data.muppets;
+    }
 });
 
 var muppets = new MuppetsCollection();
