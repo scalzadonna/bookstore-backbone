@@ -1,13 +1,20 @@
-var app = app || {};
 
-$(function() {
-    var books = [
-        { title: 'JavaScript: The Good Parts', author: 'Douglas Crockford'},
-        { title: 'The Little Book on CoffeeScript', author: 'Alex MacCaw'},
-        { title: 'Scala for the Impatient', author: 'Cay S. Horstmann'},
-        { title: 'American Psycho', author: 'Bret Easton Ellis'},
-        { title: 'Eloquent JavaScript', author: 'Marijn Haverbeke'}
-    ];
 
-    new app.LibraryView( books );
+var MuppetModel = Backbone.Model.extend({
+    defaults: {
+        id: null,
+        name: null,
+        occupation: null
+    }
+});
+
+var MuppetsCollection = Backbone.Collection.extend({
+    url: 'http://demo2352365.mockable.io/muppets',
+    model: MuppetModel
+});
+
+var muppets = new MuppetsCollection();
+
+muppets.fetch().then(function() {
+    console.log(muppets.length); // >> length: 1
 });
