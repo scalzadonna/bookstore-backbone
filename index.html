@@ -9,12 +9,16 @@
 
 <div id="muppets"></div>
 
+    <script type="text/template" id="muppet-item-tmpl">
+        <li>
+            <p><a href="/muppets/<%= id %>"><%= name %></a> // Job: <i><%= occupation %></i></p>
+        </li>
+    </script>
 
-<script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/jquery.min.js"></script>
     <script src="js/lib/underscore.min.js"></script>
     <script src="js/lib/backbone.min.js"></script>
     <script src="js/app.js"></script>
-
 
 </body>
 </html>

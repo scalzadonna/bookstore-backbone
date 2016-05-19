@@ -18,10 +18,12 @@ var MuppetsCollection = Backbone.Collection.extend({
 });
 
 var muppets = new MuppetsCollection();
+var tmplText = $('#muppet-item-tmpl').html();
+console.log(tmplText);
+var muppetTmpl = _.template(tmplText);
 
 muppets.fetch().then(function() {
-    console.log(muppets.length); // >> length: 1
-    _.each(muppets.models, function(mup){console.log(mup.get('name'))});
+    _.each(muppets.models, function(mup){$('#muppets').append(muppetTmpl(mup.toJSON()))});
 });
 
 
@@ -34,7 +36,7 @@ var KermitModel = Backbone.Model.extend({
 });
 
 var KermitView = Backbone.View.extend({
-    el: '#muppets',
+    el: '#muppets-list',
 
     initialize: function() {
 
@@ -49,9 +51,9 @@ var KermitView = Backbone.View.extend({
         return this;
     }
 });
-
-var kermit = new KermitModel();
-var kermitView = new KermitView({model: kermit});
+//
+// var kermit = new KermitModel();
+// var kermitView = new KermitView({model: kermit});
 
 
 
