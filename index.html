@@ -8,11 +8,18 @@
 <body>
     <nav>
         <ul id="tab-container">
+            <li class="tab-item"><a href="#list">Books</a></li>
             <li class="tab-item">Tab 1 <a href="#">X</a></li>
             <li class="tab-item">Tab 2 <a href="#">X</a></li>
         </ul>
     </nav>
     <div id="books">
+
+    </div>
+    <div id="book-detail">
+
+    </div>
+    <script id="library" type="text/template">
         <form id="addBook" action="#">
             <div>
                 <label for="title">Title: </label><input id="title" type="text" />
@@ -20,10 +27,7 @@
                 <button id="add">Add</button>
             </div>
         </form>
-    </div>
-    <div id="book-detail">
-
-    </div>
+    </script>
     <script id="bookTemplate" type="text/template">
         <ul>
             <li><%= title %> by <%= author %><a href="#book/<%=id%>">Ver</a><button class="delete">Delete</button></li>

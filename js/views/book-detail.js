@@ -8,6 +8,10 @@ app.BookDetailView = Backbone.View.extend({
     render:function (eventName) {
         $(this.el).html(this.template(this.model.toJSON()));
         return this;
+    },
+    close: function(){
+        $(this.el).unbind();
+        $(this.el).empty();
     }
 
 });

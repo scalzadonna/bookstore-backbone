@@ -2,7 +2,7 @@ var app = app || {};
 
 app.LibraryView = Backbone.View.extend({
     el: '#books',
-
+    template: _.template( $( '#library' ).html() ),
     initialize: function(col) {
         this.collection = col;
         this.collection.on('reset', this.render, this);
@@ -16,11 +16,12 @@ app.LibraryView = Backbone.View.extend({
 
     close: function () {
         $(this.el).unbind();
-        $(this.el).remove();
+        $(this.el).empty();
     },
 
     // render library by rendering each book in its collection
     render: function() {
+        $(this.el).html(this.template);
         this.collection.each(function( item ) {
             this.renderBook( item );
         }, this );
