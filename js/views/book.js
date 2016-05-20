@@ -6,21 +6,22 @@ app.BookView = Backbone.View.extend({
     template: _.template( $( '#bookTemplate' ).html() ),
 
     events: {
-        'click .delete': 'deleteBook'
+        'click .delete': 'deleteBook',
+        'click .item': 'showBook'
+    },
+
+    showBook: function() {
+        var bookDetailView = new app.BookDetailView({model:this.model});
+        $('#book-detail').html(bookDetailView.render().el);
     },
 
     deleteBook: function() {
-        //Delete model
         this.model.destroy();
-
-        //Delete view
         this.remove();
     },
 
     render: function() {
-        //this.el is what we defined in tagName. use $el to get access to jQuery html() function
         this.$el.html( this.template( this.model.attributes ) );
-
         return this;
     }
 });
