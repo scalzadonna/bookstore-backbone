@@ -7,7 +7,7 @@ app.BookView = Backbone.View.extend({
 
     events: {
         'click .delete': 'deleteBook',
-        'click .item': 'showBook'
+        'click .show': 'showBook'
     },
 
     showBook: function() {
@@ -24,4 +24,5 @@ app.BookView = Backbone.View.extend({
         this.$el.html( this.template( this.model.attributes ) );
         return this;
     }
+
 });

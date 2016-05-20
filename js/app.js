@@ -1,5 +1,6 @@
-var app = app || {};
-
 $(function() {
-    new app.LibraryView(  );
+
+    var router = new app.AppRouter();
+    Backbone.history.start();
+
 });
