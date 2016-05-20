@@ -2,11 +2,11 @@ body {
     background-color: #eee;
 }
 #books{
-    width:300px;
+    width:600px;
 }
 .bookContainer {
     outline: 1px solid #aaa;
-    width: 250px;
+    width: 550px;
     height: auto;
     background-color: #fff;
     float: left;
@@ -25,13 +25,16 @@ body {
 
 .bookContainer button {
     margin: 10px;
+    float: right;
 }
+#addBook{
+    margin:5px;
+    border: 1px solid #333;
 
+}
 #addBook label {
     width: 100px;
-    margin-right: 10px;
     text-align: right;
-    line-height: 25px;
 }
 
 #addBook label, #addBook input {
@@ -45,7 +48,6 @@ body {
 }
 
 #addBook button {
-
     margin: 5px 20px 10px 10px;
     clear: both;
 }
@@ -62,4 +64,23 @@ body {
     clear: both;
     font-size: 0;
     line-height: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0 10px ;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    border: solid;
+    border-width: 1px 1px 0 1px;
+    margin: 0 5px 0 0;
+    padding: 5px;
+}
+
+
+nav li a {
+    padding: 0 10px;
 }

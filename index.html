@@ -6,6 +6,12 @@
     <link rel="stylesheet" href="css/screen.css">
 </head>
 <body>
+    <nav>
+        <ul id="tab-container">
+            <li class="tab-item">Tab 1 <a href="#">X</a></li>
+            <li class="tab-item">Tab 2 <a href="#">X</a></li>
+        </ul>
+    </nav>
     <div id="books">
         <form id="addBook" action="#">
             <div>
@@ -14,14 +20,11 @@
                 <button id="add">Add</button>
             </div>
         </form>
-
     </div>
     <script id="bookTemplate" type="text/template">
         <ul>
-            <li><%= title %></li>
-            <li><%= author %></li>
+            <li><%= title %> by <%= author %> <button class="delete">Delete</button></li>
         </ul>
-        <button class="delete">Delete</button>
     </script>
     <script src="js/lib/jquery.min.js"></script>
     <script src="js/lib/underscore.min.js"></script>
