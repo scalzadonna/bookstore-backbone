@@ -14,6 +14,10 @@ TabContainerView = new (Backbone.View.extend({
         this.tabViews[tabId].render(params);
     },
 
+    render: function(){
+
+    },
+    
     createTabView: function () {
         var tab = new TabView();
         return tab;
